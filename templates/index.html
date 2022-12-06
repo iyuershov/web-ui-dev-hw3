@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Mask R-CNN visualizer</title>
+	<title>Simple image classifier</title>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link href="../static/css/styles.css" rel="stylesheet">
@@ -17,13 +17,26 @@
 <body>
 	<div class="container">
 		<div class="upload">
+			<h4>Try to classify your image with this beautiful form</h4>
 			<form action="/" method="post" enctype="multipart/form-data">
 				<input type="file" name="image">
 				<input type="submit" value="Upload">
 			</form>
 		</div>
 		<div class="result">
-			{{ result }}
+			{% if result_image %}
+				<img src="data:image/jpeg;base64,{{ result_image }}" id="uploaded-image">
+			{%	endif %}
+			{% if result_text %}
+				<div class="result_item">
+				{{ result_text }}
+				</div>
+			{% endif %}
+			{% if prob_text %}
+				<div class="result_item">
+				{{ prob_text }}
+				</div>
+			{% endif %}
 		</div>
 	</div>
 

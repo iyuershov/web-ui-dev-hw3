@@ -14,4 +14,4 @@ def classify_image(img: BytesIO):
     img = image_utils.img_to_array(img)
     x = preprocess_input(np.expand_dims(img.copy(), axis=0))
     predictions = resnet.predict(x)
-    return decode_predictions(predictions, top=1)
+    return decode_predictions(predictions, top=1)[0]
