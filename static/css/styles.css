@@ -1,0 +1,49 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 250;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 35px;
+}
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: #80a4cd 1px solid;
+}
+
+.upload > form * {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#uploaded-image {
+    max-width: 400px;
+    max-height: 400px;
+    margin-bottom: 20px;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result_item {
+    margin-top: 10px;
+    font-size: 16px;
+}
