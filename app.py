@@ -1,6 +1,6 @@
 import base64
 from io import BytesIO
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request
 from model import classify_image
 
 app = Flask(__name__)
@@ -20,6 +20,5 @@ def index():
         return render_template(
             'index.html', result_text=result_text, prob_text=prob_text, result_image=encoded_image.decode('utf-8')
         )
-    else:
-        flash('upload error')
+
     return render_template('index.html')
